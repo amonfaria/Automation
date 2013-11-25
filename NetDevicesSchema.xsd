@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+elementFormDefault="qualified" attributeFormDefault=
+"unqualified">
+      <xs:element name="NetDevices">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="device" maxOccurs="unbounded">
+                              <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element name="MGT-IP" type="xs:string" />
+                                          <xs:element name="version" type="xs:string" />
+                                          <xs:element name="serial" type="xs:string" />
+                                          <xs:element name="vendor" type="xs:string" />
+                                          <xs:element name="description" type="xs:string" />
+                                          <xs:element name="mactable" maxOccurs="1">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="mac" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element name="interface" maxOccurs="unbounded">
+                                                                        <xs:complexType>
+                                                                            <xs:sequence>
+                                                                                <xs:element name="vlan" maxOccurs="unbounded">
+                                                                                    <xs:complexType>
+                                                                                    <xs:attribute name="tag"/>
+                                                                                    </xs:complexType>
+                                                                                </xs:element>
+                                                                            </xs:sequence>
+                                                                            <xs:attribute name="number"/>
+                                                                        </xs:complexType>
+                                                                    </xs:element>
+                                                                </xs:sequence>
+                                                                <xs:attribute name="name"/>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                          </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="nodeName"/>
+                              </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+            </xs:complexType>
+            <xs:key name="DeviceDetails">
+                  <xs:selector xpath=".//device" />
+                  <xs:field xpath="serial" />
+            </xs:key>
+      </xs:element>
+</xs:schema>

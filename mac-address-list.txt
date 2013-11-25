@@ -1,0 +1,9 @@
+MAC Address       FID  Port          Type
+----------------- ---- ------------- --------
+02-1F-A0-00-00-01 1    ge.5.43       Learned 
+02-1F-A0-00-00-02 1    ge.5.44       Learned 
+02-1F-A0-00-00-03 1    ge.5.45       Learned 
+02-1F-A0-00-00-04 1    ge.5.46       Learned 
+02-1F-A0-00-00-05 1    ge.5.47       Learned 
+02-1F-A0-00-00-06 1    ge.5.48       Learned 
+02-1F-A0-00-00-07 1    ge.5.49       Learned 
